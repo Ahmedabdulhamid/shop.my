@@ -1,0 +1,23 @@
+.textfield{
+    width:  100% !important;
+}
+.text{
+    background-color:transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color:white !important;
+border-bottom: 1px solid white !important;
+outline: none !important;
+}
+.text::placeholder{
+    color: white !important;
+}
+.xlcz{
+    border:2px solid burlywood;
+    background-color: cornsilk;
+    width: 250px;
+    color : sandybrown;
+    border-radius: 15px;
+    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+    
+}

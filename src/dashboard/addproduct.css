@@ -1,0 +1,11 @@
+.textfieldlabel{
+    color: red !important;
+    }
+    .upload{
+        border: 2px lightskyblue dashed;
+        padding: 60px 0;
+    }
+    .uploaderr{
+        border: 2px red dashed;
+        padding: 60px 0;
+    }

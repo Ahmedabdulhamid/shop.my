@@ -1,0 +1,56 @@
+.input:focus {
+    outline: none !important;
+    outline-color: none !important;
+    box-shadow: none !important;
+}
+
+.input {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: white !important;
+    border-bottom: 1px solid white !important;
+    outline: none !important;
+}
+
+.input::placeholder {
+    color: white !important
+}
+
+.navlink1:focus {
+    border-color: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: none !important;
+    margin-right: none !important;
+
+}
+.navbar-toggler-icon{
+  background-color: white !important;
+  color:  white !important;
+   
+}
+.x{
+    width: 90% !important;
+}
+
+.navbar3::-webkit-scrollbar{
+   
+    width: 10px;
+    height: 5px;
+    
+   
+}
+.navbar3::-webkit-scrollbar-thumb{
+    background-color: orange !important;
+    border-radius: 2px;
+}
+.categorybar:hover{
+    cursor: pointer;
+}

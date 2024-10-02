@@ -1,0 +1,22 @@
+.cart-container {
+  position: relative;
+  width: 200px; /* Adjust size as needed */
+  height: 200px; /* Adjust size as needed */
+}
+
+.empty-cart {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  animation: moveCart 5s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+@keyframes moveCart {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%; /* Adjust the distance the cart moves */
+  }
+}

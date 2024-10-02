@@ -1,0 +1,13 @@
+.btn-s{
+    position: absolute;
+    top:80%;
+    right: 2px;
+   font-size: 60px !important;
+    border:none ;
+    border-radius: 100%;
+    z-index:5000;
+    
+
+    position: fixed !important;
+
+}
