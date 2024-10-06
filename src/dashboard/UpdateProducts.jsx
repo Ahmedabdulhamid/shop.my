@@ -16,7 +16,7 @@ const UpdateProducts = () => {
   const dispatch = useDispatch()
   const handleFunc = async () => {
     try {
-      const response = await fetch(`http://localhost/products/index.php?id=${id}`)
+      const response = await fetch(`https://ahmedabdulhamidm-001-site1.atempurl.com/index.php?id=${id}`)
       const result = await response.json();
 
       setProducts(result.data)
