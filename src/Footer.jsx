@@ -42,7 +42,7 @@ const Footer = () => {
                                 <NavLink className='text-light py-2 '  as={Link} to={localStorage.login?"/profile":"/login"} >Your Account</NavLink>
                                 <NavLink className='text-light py-2 '  as={Link} to="/addedproducts" >Your Cart Page</NavLink>
 
-                                <NavLink className='text-light py-2 '  as={Link} to={localStorage.login?"/purchases":"/login"} >Your Purchases</NavLink>
+                                <NavLink className='text-light py-2 '  as={Link} to={localStorage.login?"/purchases":"/login"} >Your Orders</NavLink>
                             </div>
 
 
