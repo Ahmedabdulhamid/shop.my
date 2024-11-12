@@ -11,7 +11,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
@@ -74,14 +74,14 @@ const Home = () => {
                                 title={e.category}
 
                             />
-                            <CardMedia
-                                component="img"
-                                height="300"
-                                image={e.image}
-
-                            />
+                            
+                            <LazyLoadImage
+                                
+                                height={"300"}
+                                src={e.image} // use normal <img> attributes as props
+                                />
                             <CardContent>
-                            <Typography paragraph className='fw-bold'>Price: $ {e.price}</Typography>
+                                <Typography paragraph className='fw-bold'>Price: $ {e.price}</Typography>
                                 <div className='d-flex justify-content-center'>
                                     <span className='fw-bold'>Rating: </span><StarRatings
                                         rating={e.rate
@@ -100,7 +100,7 @@ const Home = () => {
                             </CardContent>
                             <CardActions disableSpacing>
 
-                              
+
                             </CardActions>
                             <Collapse in={expanded} timeout="auto" unmountOnExit>
                                 <CardContent>
@@ -125,3 +125,4 @@ const Home = () => {
 }
 
 export default Home
+
