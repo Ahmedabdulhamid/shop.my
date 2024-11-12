@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
@@ -66,12 +66,11 @@ export const ProductCategory = () => {
                                 title={e.category}
 
                             />
-                            <CardMedia
-                                component="img"
-                                height="300"
-                                image={e.image}
-
-                            />
+                           <LazyLoadImage
+                                
+                                height={"300"}
+                                src={e.image} // use normal <img> attributes as props
+                                />
                             <CardContent>
                                 <Typography paragraph className='fw-bold'>Price: $ {e.price}</Typography>
                                 <div className='d-flex justify-content-center'>
@@ -115,3 +114,4 @@ export const ProductCategory = () => {
         </div>
     )
 }
+
