@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import StarRatings from 'react-star-ratings';
 import Button from '@mui/material/Button';
 import Swal from 'sweetalert2'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "./style.css"
 import { FaCartPlus } from "react-icons/fa6";
 import Cookies from "universal-cookie";
@@ -70,8 +71,10 @@ const Details = () => {
       </div>) : (<div className="row mt-5">
 
         <div className="col-lg-6 col-md-6 mt-5">
-          <img src={productDetails.image
-          } alt="" srcset="" className='w-25' />
+          <LazyLoadImage
+
+            className='w-50'
+            src={productDetails.image} />
         </div>
         <div className="col-lg-6 col-md-6 mt-5 text-dark">
           <p> description : {productDetails.description}</p>
@@ -106,4 +109,5 @@ const Details = () => {
 }
 
 export default Details
+
 
