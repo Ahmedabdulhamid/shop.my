@@ -8,8 +8,8 @@ import Swal from 'sweetalert2'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import "./style.css"
 import { FaCartPlus } from "react-icons/fa6";
-import Cookies from "universal-cookie";
 
+import 'react-lazy-load-image-component/src/effects/blur.css';
 const Details = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -73,8 +73,14 @@ const Details = () => {
         <div className="col-lg-6 col-md-6 mt-5">
           <LazyLoadImage
 
-            className='w-50'
-            src={productDetails.image} />
+            height={"300"}
+            src={productDetails.image} // use normal <img> attributes as props
+            loading="lazy"
+            effect='blur'
+            wrapperProps={{
+
+              style: { transitionDelay: "1s" },
+            }} />
         </div>
         <div className="col-lg-6 col-md-6 mt-5 text-dark">
           <p> description : {productDetails.description}</p>
@@ -109,5 +115,4 @@ const Details = () => {
 }
 
 export default Details
-
 
