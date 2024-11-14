@@ -5,22 +5,20 @@ import { search } from './REDUXTOOLKIT/getAllProducts';
 import StarRatings from 'react-star-ratings';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
-import useScrollToTop from './ScrollToTop';
+
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
+
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
+import { motion } from "framer-motion";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 import { FaShoppingCart } from "react-icons/fa";
 import "./home.css"
 import "./style.css"
@@ -72,6 +70,18 @@ const Search = () => {
                     ) : (
                         productSearch.map((e, idx) => (
                             <Card sx={{ maxWidth: 345 }} className=' mx-2 shadow-lg p-3 mb-5 bg-body-tertiary rounded' style={{ background: "transparent" }}>
+                                 <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                whileHover={{
+                                    scale: 1.05,
+                                    boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.2)",
+                                    transition: { duration: 0.3 },
+                                }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ duration: 0.5, ease: "easeInOut" }}
+                            >
                                 <CardHeader
 
 
@@ -82,7 +92,12 @@ const Search = () => {
                                 
                                 height={"300"}
                                 src={e.image} // use normal <img> attributes as props
-                                loading="lazy" />
+                                loading="lazy"
+                                effect='blur'
+                                wrapperProps={{
+                                    
+                                    style: {transitionDelay: "1s"},
+                                }} />
                                 <CardContent>
                                     <Typography paragraph className='fw-bold'>Price: $ {e.price}</Typography>
                                     <div className='d-flex justify-content-center'>
@@ -114,6 +129,7 @@ const Search = () => {
 
                                     </CardContent>
                                 </Collapse>
+                                </motion.div>
                             </Card>
                         ))
                     )
